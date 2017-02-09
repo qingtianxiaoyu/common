@@ -7,7 +7,6 @@ import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
-import com.li.watchdog.Logger;
 
 import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
@@ -100,7 +99,6 @@ public class NetworkUtil {
                 .get().getSystemService(Context.TELEPHONY_SERVICE);
         String IMSI = telephonyManager.getSubscriberId();
         // IMSI号前面3位460是国家，紧接着后面2位00 02是中国移动，01是中国联通，03是中国电信。
-        Logger.d("IMSI = " + IMSI);
         if (TextUtils.isEmpty(IMSI)) {
             return ProvidersName;
         }
